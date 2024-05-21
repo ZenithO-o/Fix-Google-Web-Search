@@ -14,6 +14,12 @@ This userscript removes AI results and other unwanted content from Google web se
 3. Create a new userscript in your userscript manager and paste the code.
 4. Save the userscript and enable it.
 
+### Other Sources for Installation
+
+[GreasyFork](https://greasyfork.org/en/scripts/495638-fix-google-web-search)
+
+[OpenUserJS](https://openuserjs.org/scripts/ZenithO_o/Fix_Google_Web_Search)
+
 ## Usage
 Once installed and enabled, the userscript will automatically do the described functionality. No extra steps required!
 
