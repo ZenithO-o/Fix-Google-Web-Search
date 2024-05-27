@@ -194,22 +194,31 @@
 // @match        *://*.google.cat/search*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @grant        none
+// @downloadURL https://update.greasyfork.org/scripts/495638/Fix%20Google%20Web%20Search.user.js
+// @updateURL https://update.greasyfork.org/scripts/495638/Fix%20Google%20Web%20Search.meta.js
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+  "use strict";
 
-    let currentURL = new URL(window.location.href);
-    if(currentURL.searchParams.get("udm"))
-    {
-        return; // Already has a udm param
+  // Checks if all Google search links on the page have a udm parameter.
+  const searchLinks = document.querySelectorAll('a[href^="/search"]');
+  searchLinks.forEach((link) => {
+    const linkURL = new URL(link.href);
+    if (!linkURL.searchParams.has("udm")) {
+      // Add a placeholder param
+      linkURL.searchParams.set("udm", "1");
+      link.href = linkURL.toString();
     }
-    if(sessionStorage.getItem("added_udm")) {
-        return; // Have added udm already to the session
-    }
+  });
 
-    currentURL.searchParams.set("udm", "14");
-    sessionStorage.setItem("added_udm", "true");
-    const newURL = currentURL.toString();
-    window.location.replace(newURL);
+  // Evaluate current location, and add udm for Web search.
+  let currentURL = new URL(window.location.href);
+  if (currentURL.searchParams.get("udm")) {
+    return; // Already has a udm param
+  }
+
+  currentURL.searchParams.set("udm", "14");
+  const newURL = currentURL.toString();
+  window.location.replace(newURL);
 })();
