@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fix Google Web Search
 // @namespace    http://tampermonkey.net/
-// @version      2024-05-20
+// @version      2024-05-26
 // @license      MIT
 // @description  Remove AI results and other fluff from your Google search! Adds udm=14 to the search params of a new Google search, changing to the "Web" tab.
 // @author       ZenithO-o
