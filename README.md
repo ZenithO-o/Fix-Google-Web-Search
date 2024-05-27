@@ -14,9 +14,15 @@ This userscript removes AI results and other unwanted content from Google web se
 3. Follow your exension's instructions in creating/using a new userscript.
 4. Save the userscript and enable it.
 
+### Other Sources for Installation
+
+[GreasyFork](https://greasyfork.org/en/scripts/495638-fix-google-web-search)
+
+[OpenUserJS](https://openuserjs.org/scripts/ZenithO_o/Fix_Google_Web_Search)
+
 ## Usage
 Once installed and enabled, the userscript will automatically do the described functionality. No extra steps required!
 
 ## Personal notes
-- This readme took longer to write than the code lol.
-- Sorry you had to read all the `@match` params. Would have used `@include` for proper location matching, but Manifest V3 deprecates this feature.
+- This readme took longer to write than the code lol
+- Sorry you had to read all the `@match` params. Would have used `@include` for proper matching, but apparently Manifest V3 makes it weird or something, idk. Spent 3 minutes looking it up.
